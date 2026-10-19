@@ -17,7 +17,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* written by github copilot */
+/* written by ai (github copilot and chatgpt) */
 .download-button {
   display: inline-flex;
   align-items: center;
@@ -37,4 +37,53 @@ a:hover {
   opacity: 0.98;
   text-decoration: none;
 }
+
+/* Moving Godot-style checkerboard grid */
+.moving-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+
+    --grid-density: 1;
+    --grid-size: 100px;
+    --color-1: rgb(51, 51, 51);
+    --color-2: rgb(26, 26, 26);
+
+    background-color: var(--color-2);
+}
+
+.moving-grid::before {
+    content: "";
+    position: absolute;
+    inset: -200%;
+    width: 400%;
+    height: 400%;
+
+    background-image:
+        conic-gradient(
+            from 90deg,
+            var(--color-1) 25%,
+            var(--color-2) 0 50%,
+            var(--color-1) 0 75%,
+            var(--color-2) 0
+        );
+
+    background-size:
+        calc(var(--grid-size) * 2)
+        calc(var(--grid-size) * 2);
+
+    animation: grid-slide 5s linear infinite;
+}
+
+@keyframes grid-slide {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-100px, -100px);
+    }
+}
+
 /* past this wasnt written by copilot */
