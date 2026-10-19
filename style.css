@@ -8,21 +8,6 @@ body {
   line-height: 1.5;
 }
 
-h1.hidden-heading,
-p.intro,
-p.opinion {
-  text-align: center;
-  line-height: 1.3;
-}
-
-.socials ul,
-.projects ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-
 a {
   color: rgb(42, 127, 255);
   text-decoration: none;
