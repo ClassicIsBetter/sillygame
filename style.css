@@ -16,3 +16,30 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* written by github copilot */
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(180deg, #2e8bff 0%, #1564d6 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+  font-weight: 600;
+  transform: translateZ(0);
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* hover / focus / active states */
+.download-button:hover,
+.download-button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.32);
+  opacity: 0.98;
+  text-decoration: none;
+}
+/* past this wasnt written by copilot */
