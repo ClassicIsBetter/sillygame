@@ -1,89 +1,109 @@
 body {
-  font-family: 'Minecraftia';
-  background: black;
-  color: white;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 25px;
-  line-height: 1.5;
-}
+      font-family: 'Minecraftia';
+      background: black;
+      color: white;
+      max-width: 640px;
+      margin: 0;
+      padding: 25px;
+      line-height: 1.5;
+    }
 
-a {
-  color: rgb(42, 127, 255);
-  text-decoration: none;
-}
+    a {
+      color: rgb(42, 127, 255);
+      text-decoration: none;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-/* written by ai (github copilot and chatgpt) */
-.download-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  background: linear-gradient(180deg, #2e8bff 0%, #1564d6 100%);
-  color: #fff;
-  text-decoration: none;
-  transform: translateZ(0);
-  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
-  -webkit-font-smoothing: antialiased;
-}
+    /* Download buttons container */
+    .download-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
 
-.download-button:hover,
-.download-button:focus {
-  transform: translateY(-2px);
-  opacity: 0.98;
-  text-decoration: none;
-}
+    /* Download button */
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      padding: 0.6rem 0.8rem;
+      background: linear-gradient(180deg, #2e8bff 0%, #1564d6 100%);
+      color: #fff;
+      text-decoration: none;
+      box-sizing: border-box;
+      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* Moving Godot-style checkerboard grid */
-.moving-grid {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    overflow: hidden;
+    .download-button:hover,
+    .download-button:focus {
+      transform: translateY(-2px);
+      opacity: 0.98;
+      text-decoration: none;
+    }
 
-    --grid-density: 1;
-    --grid-size: 100px;
-    --color-1: rgb(51, 51, 51);
-    --color-2: rgb(26, 26, 26);
+    /* Disabled download buttons */
+    .download-button[aria-disabled="true"] {
+      background: #454545;
+      color: #999;
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.65;
+      box-shadow: none;
+      transform: none;
+    }
 
-    background-color: var(--color-2);
-}
+    /* Moving Godot-style checkerboard grid */
+    .moving-grid {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
 
-.moving-grid::before {
-    content: "";
-    position: absolute;
-    inset: -200%;
-    width: 400%;
-    height: 400%;
+      --grid-density: 1;
+      --grid-size: 100px;
+      --color-1: rgb(51, 51, 51);
+      --color-2: rgb(26, 26, 26);
 
-    background-image:
+      background-color: var(--color-2);
+    }
+
+    .moving-grid::before {
+      content: "";
+      position: absolute;
+      inset: -200%;
+      width: 400%;
+      height: 400%;
+
+      background-image:
         conic-gradient(
-            from 90deg,
-            var(--color-1) 25%,
-            var(--color-2) 0 50%,
-            var(--color-1) 0 75%,
-            var(--color-2) 0
+          from 90deg,
+          var(--color-1) 25%,
+          var(--color-2) 0 50%,
+          var(--color-1) 0 75%,
+          var(--color-2) 0
         );
 
-    background-size:
+      background-size:
         calc(var(--grid-size) * 2)
         calc(var(--grid-size) * 2);
 
-    animation: grid-slide 5s linear infinite;
-}
+      animation: grid-slide 5s linear infinite;
+    }
 
-@keyframes grid-slide {
-    from {
+    @keyframes grid-slide {
+      from {
         transform: translate(0, 0);
-    }
-    to {
+      }
+      to {
         transform: translate(-100px, -100px);
+      }
     }
-}
 
-/* past this wasnt written by copilot */
+    /* past this wasnt written by copilot */
